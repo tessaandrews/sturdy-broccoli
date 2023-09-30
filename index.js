@@ -1,12 +1,13 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require("inquirer");
+
 // TODO: Create an array of questions for user input
 //description, 
-installation instructions, 
-usage information, 
-contribution guidelines, and 
-test instructions
+//installation instructions, 
+//usage information, 
+//contribution guidelines, and 
+//test instructions
 const questions = 
   prompt([
     {
@@ -16,12 +17,12 @@ const questions =
     },
     {
       type: '',
-      message: '',
+      message: '"Provide a description of your project:',
       name: '',
     },
     {
       type: '',
-      message: '',
+      message: 'What installation process would you like to use?',
       name: '',
     },
     {
@@ -31,9 +32,14 @@ const questions =
     },
     {
         type: '',
-        message:'',
-        name: '',
-    }
+        message:'What is your email address?',
+        name: 'email',
+    },
+    {
+      type: 'input',
+      message:'What is your github username?',
+      name: 'github',
+  }
   ])
 
 
