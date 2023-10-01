@@ -1,8 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const questions = 
-  prompt([
+const questions = [
     {
       type: 'input',
       message: 'What is the title of your project?',
@@ -34,33 +33,27 @@ const questions =
       message:'What is your github username?',
       name: 'github',
   }
-  ])
+  ]
 
-//inquirer.prompt(questions).then(answers)
-//{
- // const readmeContent = 
- // generateREADME(answers);
+inquirer.prompt(questions).then(answers)
+{
+  const readmeContent = 
+  generateREADME(answers);
 
- //fs.writeFileSync('README.md', 
-  //readmeContent);
-
-  //console.log('README.md successfully generated!');
-//};
-
+}
 
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
- fs.writeFile(fileName, data, err => {
-  if (err) {
-return console.log(err);
-  }
+//function writeToFile(fileName, data) {
+ //fs.writeFile(fileName, data, err => {
+ // if (err) {
+//return console.log(err);
+ // }
+ //// console.log('README.md successfully generated!');
+//});
 
-  console.log('README.md successfully generated!');
-});
-
-}
+//}
 // TODO: Create a function to initialize app
 function init() {
   
