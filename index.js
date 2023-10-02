@@ -1,17 +1,17 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-//const generateMarkdown = require('generateMarkdown').generateMarkdown
+const generateMarkdown = require("./generateMarkdown").generateMarkdown
 
-inquirer
-  .prompt([
+  inquirer
+    .prompt ([
     {
       type: 'input',
-      message: 'What is the title of your project?',
+      message: 'What is the title of your project?:',
       name: 'title',
     },
     {
       type: 'input',
-      message: '"Provide a description of your project:',
+      message: 'Provide a description of your project:',
       name: 'description',
     },
     {
@@ -45,25 +45,21 @@ inquirer
     message:'What is your github username?',
     name: 'github',
   },
+])
 
-]);
+.then((answers) => {
+ //const generateMarkdown = generateMarkdown(answers);
 
- // fs.readFile('README.md', 'utf8', (error, data) => 
- /// error ? console.error(error) : console.log(data)
-//);
+  fs.writeFile('README.md', generateMarkdown, (err) =>
+    err ? console.log(err) : console.log('Successfully created README.md!')
+  );
+}
+)
 
-//function writeToFile(filename, data) 
- // fs.writeFile("README.md", data, (err) =>
-  //  err ? console.log(err) : console.log('Successfully created README.md!')
-  //);
 
 
 // TODO: Create a function to initialize app
-//function init () => {
-  //promptUser()
-   // .then((answers) => writeFile('README.md', generateHTML(answers)))
-   // .then(() => console.log('Successfully wrote to README.md!'))
-   // .catch((err) => console.error(err));
-//};
+//function init () 
 
-init();
+//init();
+
