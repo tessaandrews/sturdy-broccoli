@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require("./generateMarkdown").generateMarkdown
+const generateMarkdown = require("./generateMarkdown");
 
-  inquirer
-    .prompt ([
+  const questions = () => {
+    return inquirer.prompt ([
     {
       type: 'input',
       message: 'What is the title of your project?:',
@@ -15,16 +15,16 @@ const generateMarkdown = require("./generateMarkdown").generateMarkdown
       name: 'description',
     },
     {
-      type: 'input',
-      message: 'What installation process would you like to use?',
+     type: 'input',
+     message: 'What installation process would you like to use?',
       name: 'installation',
     },
     {
-      type: 'input',
-      message: 'Provide instructions and examples for use:',
+    type: 'input',
+    message: 'Provide instructions and examples for use:',
       name: 'usage',
     },
-    {
+   {
       type: 'input',
       message: 'List your collaborators:',
       name: 'credits',
@@ -34,8 +34,8 @@ const generateMarkdown = require("./generateMarkdown").generateMarkdown
       message: 'Licensing option?',
       name: 'license',
       choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
-    },
-    {
+   },
+  {
       type: 'input',
       message:'What is your email address?',
       name: 'email',
@@ -45,21 +45,42 @@ const generateMarkdown = require("./generateMarkdown").generateMarkdown
     message:'What is your github username?',
     name: 'github',
   },
-])
-
-.then((answers) => {
- //const generateMarkdown = generateMarkdown(answers);
-
-  fs.writeFile('README.md', generateMarkdown, (err) =>
-    err ? console.log(err) : console.log('Successfully created README.md!')
-  );
-}
-)
-
+]
+    )};
 
 
 // TODO: Create a function to initialize app
-//function init () 
+function writeToFile (fileName, data) {
+  return fs.writeFileSync(fileName, data);
 
-//init();
+ };
 
+function init() 
+  //.then(answers => {
+   // return generateMarkdown(answers);
+ // })
+ // .then (data => {
+ //   return writeToFile(data);
+ // })
+  //.catch(err => {
+  //  console.log(err)
+ // })
+
+  let answers = await questions();
+const generateContent = generateMarkdown(answers);
+console.log('ReadME generated');
+writeToFile('README.md', generateMarkdown(questions));
+
+//catch((err) => console.error(err))
+//}
+//writeToFile('README.md', generateMarkdown, (questions), (err) =>
+//err ? console.log(err): console.log('Successfully created README')
+
+  //.then((answers) => fs.writeFileSync('README.md', generateMarkdown(answers)))
+ //.then(() => console.log('Successfully wrote to README.md'))
+ //.catch((err) => console.error(err))
+//);
+//};
+
+
+init();
