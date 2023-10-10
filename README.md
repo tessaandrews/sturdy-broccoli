@@ -1,36 +1,37 @@
 
-  # Hello
-  ![license badge](https://img.shields.io/badge/license-ISC-blue.svg)
+  # read me generator
+  ![license badge](https://img.shields.io/badge/license-LGPLv3-blue.svg)
 
   ## Description
-  world;
+  this generator provides users with prompts, and allows them to generate a read me in order to explain the project to users
 
   ## Table of Contents
   * [Installation](#installation) 
   * [Usage](#usage) 
    * [License](#license)
-  * [Credits](#credits) 
+  * [Collaborators](#collaborators) 
   * [Tests](#test)
   * [Questions](#questions)
   
 
 
   ## Installation
-  this;
+  npm inquirer
 
   ## Usage
-  is;
+  open the index js file in a terminal, and enter node index js in the console then answer the prompts
 
    ## License
     
-    This project is licensed under ISC .
+    This project is licensed under LGPLv3 .
 
-  ## Credits
-  my read me generator;
+  ## Collaborators
+  none
 
  
  ## Questions
- If you would like to reach out or have any questions you can email me at [sara@gmail.com](mailto:sara@gmail.com).
- If you would like yo see other projects I have built feel free to check my personal github : [saraNP-33](https://github.com/saraNP-33)
+
+ If you would like to reach out or have any questions you can email me at [tessa4158@icloud.com](mailto:tessa4158@icloud.com).
+ If you would like yo see other projects I have built feel free to check my personal github : [tessaandrews](https://github.com/tessaandrews)
 
 

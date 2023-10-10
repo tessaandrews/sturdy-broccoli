@@ -27,7 +27,7 @@ const generateMarkdown = require("./generateMarkdown");
    {
       type: 'input',
       message: 'List your collaborators:',
-      name: 'credits',
+      name: 'collaborators',
     },
     {
       type: 'list',
@@ -64,19 +64,6 @@ function init() {
 
 }
   
-
-
-
-
-
-//catch((err) => console.error(err))
-//err ? console.log(err): console.log('Successfully created README')
-
-  //.then((answers) => fs.writeFileSync('README.md', generateMarkdown(answers)))
- //.then(() => console.log('Successfully wrote to README.md'))
- //.catch((err) => console.error(err))
-//);
-//};
 
 
 init();
